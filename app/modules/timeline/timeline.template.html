@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="modules/timeline/timeline.css" />
+<link rel="stylesheet" href="modules/profile.info.popup/profile.info.popup.css" />
+<header-after-login-component></header-after-login-component>
+<div class="container" style="margin-top: 75px;">
+	<div class="col-lg-3 col-md-3">
+		<profile-popup info="feed[3]" id="profile-popup-{{ feed[0].id }}"></profile-popup>
+
+		<!-- trends -->
+		<div class="well">
+			<h3>Trending now!</h3>
+			<div ng-repeat="item in feed | limitTo: 6">
+				<p>
+					<a href="" style="color: #89C9FA;">#{{ item.title }}</a>
+				</p>
+				{{ item.random }} Tweets
+			</div>
+		</div>
+	</div> <!-- End col -->
+	<div class="col-lg-6 col-md-6 col-sm-12">
+		<new-post-component></new-post-component>
+		<post-component feed="feed"></post-component>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="modules/new.post/new.post.css" />
+<div class="well">
+	<form name="newPost">
+		<textarea ng-focus="showItems = true;" ng-blur="showItems = false;newPost.textArea = ''" name="newPostText" id="newPostText" rows="3" 
+			placeholder="Write something.!" ng-model="newPost.textArea"></textarea>
+		<div id="upload-section" ng-if="showItems">
+			<label class="btn btn-default btn-sm text-center" style="padding: 6px 12px;" for="upload-file-selector">
+				<input id="upload-file-selector" type="file">
+				<i class="fa fa-file-image-o icon-upload-alt margin-correction text-center"></i>
+			</label>
+			<label class="btn btn-default btn-sm text-center" style="padding: 6px 12px;">
+				<i class="fa fa-map-marker icon-upload-alt margin-correction text-center"></i>
+			</label>
+
+			<!-- Post button on right side -->
+			<label ng-disabled="!newPost.textArea" class="btn btn-info btn-sm pull-right text-center" style="padding: 6px 12px; margin-right: 0;">
+				<i class="fa fa-telegram icon-upload-alt margin-correction text-center"></i> Post
+			</label>
+		</div>
+	</form>
+</div>

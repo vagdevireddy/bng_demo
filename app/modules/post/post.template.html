@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 feed"
+		ng-repeat="item in feed | limitTo: 15" ng-animate="'animate'">
+		<div class="well feed-well" style="padding: 0; overflow: auto;">
+			<a href="">
+				<img class="img-responsive" ng-src="{{ item.url }}" alt="{{ item.title }}">
+			</a>
+
+			<div class="media col-lg-12">
+				<div class="media-left">
+					<a href="">
+						<img style="width: 40px; height: 40px;" ng-src="{{ item.thumbnailUrl }}" class="media-object img-circle" alt="Sample Image">
+					</a>
+				</div>
+				<div class="media-body" ng-mouseleave="hoverOut(item.id)">
+					<h5 style="position: relative;" class="media-heading" ng-mouseover="hoverIn(item.id)">
+						<b>
+							<a href="" class="profile-title">
+								{{ item.title | limitTo: 20 }}
+								{{item.title.length > 20 ? '...' : ''}}
+							</a>
+						</b>
+						<small class="pull-right"><i>Jan 10, 2014</i></small>
+					</h5>
+					<p>
+						@{{ item.title | limitTo: 10 }}
+					</p>
+				</div>
+			</div>
+			<p class="col-lg-12">
+				{{ item.title | limitTo: 44 }}
+				{{item.title.length > 44 ? '...' : ''}}
+			</p>
+			<p class="col-lg-12" style="margin-top: 10px;">
+				<a class="btn btn-default btn-xs btn-circle" href="" id="reply"><span class="fa fa-heart"></span> Love it</a>
+                <a class="btn btn-default btn-xs btn-circle" data-toggle="collapse" href=""><span class="fa fa-comment"></span> &nbsp; 2 comments</a>
+				<a class="btn btn-default btn-xs btn-circle" data-toggle="collapse" href=""><span class="fa fa-share-alt"></span> &nbsp; Share</a>
+			</p>
+		</div>
+	</div>
+</div>

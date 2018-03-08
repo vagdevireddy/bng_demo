@@ -1,0 +1,144 @@
+<link rel="stylesheet" href="modules/feed/feed.css" />
+<link rel="stylesheet" href="modules/profile.info.popup/profile.info.popup.css" />
+<!-- header component -->
+<header-component></header-component>
+
+
+<!-- feed starts here -->
+<div class="container container-main-fluid">
+	
+	<div class="tabbable-panel">
+		<div class="tabbable-line">
+			<div class="tab-content">
+				<div class="tab-pane active" id="tab_default_1">
+					<div id="posts" class="row">
+						<div id="tab_1_{{ $index }}" class="item col-md-4" ng-repeat="item in feed | limitTo: 15">
+							<div class="well" style="overflow: auto; padding: 0;">
+								<img class="thumbnail img-responsive" style="border: 0px solid #fff; border-radius: 5px;" 
+									ng-src="{{ item.url }}">
+								<div class="media col-lg-12">
+								    <div class="media-left">
+								        <a href="">
+								            <img style="width: 40px; height: 40px; border-radius: 5px;" ng-src="{{ item.thumbnailUrl }}" 
+												class="media-object img-circle" alt="Sample Image">
+								        </a>
+								    </div>
+								    <div class="media-body" ng-mouseleave="hoverOut(item.id)">
+								        <h5 style="position: relative;" class="media-heading" ng-mouseover="hoverIn(item.id)">
+								        	<b>
+								        		<a href="" class="profile-title">
+								        			{{ item.title | limitTo: 20 }}
+								        			{{item.title.length > 20 ? '...' : ''}}
+								        		</a>
+								        	</b>
+								        	<small class="pull-right"><i>Jan 10</i></small>
+											<!--<profile-popup info="item" id="profile-popup-{{ item.id }}"></profile-popup>-->
+								        </h5>
+								        <p>
+								        	@{{ item.title | limitTo: 10 }}
+								        </p>
+								    </div>
+								</div>
+								<p class="col-lg-12">
+									{{ item.title | limitTo: 44 }}
+								    {{item.title.length > 44 ? '...' : ''}}
+								</p>
+								<p class="col-lg-12" style="margin-top: 10px;">
+									<a class="btn btn-default btn-xs btn-circle" href="" id="reply">
+										<span class="fa fa-heart" style="font-size: 12px;"></span>&nbsp; Love it
+									</a>
+									<a class="btn btn-default btn-xs btn-circle" data-toggle="collapse" href=""><span class="fa fa-comment"></span> &nbsp; 2 comments</a>
+									<a class="btn btn-default btn-xs btn-circle" data-toggle="collapse" href=""><span class="fa fa-share-alt"></span> &nbsp; Share</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="tab_default_2">
+					<div id="posts" class="row">
+						<div id="tab_2_{{ $index }}" class="item col-md-4" ng-repeat="item in feed | limitTo: 15">
+							<div class="well" style="overflow: auto; padding: 0;">
+								<img class="thumbnail img-responsive" style="border: 0px solid #fff; border-radius: 5px;" 
+									ng-src="{{ item.url }}">
+								<div class="media col-lg-12">
+								    <div class="media-left">
+								        <a href="">
+								            <img style="width: 40px; height: 40px; border-radius: 5px;" ng-src="{{ item.thumbnailUrl }}" 
+												class="media-object img-circle" alt="Sample Image">
+								        </a>
+								    </div>
+								    <div class="media-body" ng-mouseleave="hoverOut(item.id)">
+								        <h5 style="position: relative;" class="media-heading" ng-mouseover="hoverIn(item.id)">
+								        	<b>
+								        		<a href="" class="profile-title">
+								        			{{ item.title | limitTo: 20 }}
+								        			{{item.title.length > 20 ? '...' : ''}}
+								        		</a>
+								        	</b>
+								        	<small class="pull-right"><i>Jan 10</i></small>
+											<!--<profile-popup info="item" id="profile-popup-{{ item.id }}"></profile-popup>-->
+								        </h5>
+								        <p>
+								        	@{{ item.title | limitTo: 10 }}
+								        </p>
+								    </div>
+								</div>
+								<p class="col-lg-12">
+									{{ item.title | limitTo: 44 }}
+								    {{item.title.length > 44 ? '...' : ''}}
+								</p>
+								<p class="col-lg-12" style="margin-top: 10px;">
+									<a class="btn btn-default btn-xs btn-circle" href="" id="reply"><span class="fa fa-heart"></span> Love it</a>
+									<a class="btn btn-default btn-xs btn-circle" data-toggle="collapse" href=""><span class="fa fa-comment"></span> &nbsp; 2 comments</a>
+									<a class="btn btn-default btn-xs btn-circle" data-toggle="collapse" href=""><span class="fa fa-share-alt"></span> &nbsp; Share</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="tab_default_3">
+					<div id="posts" class="row">
+						<div id="tab_3_{{ $index }}" class="item col-md-4" ng-repeat="item in feed | limitTo: 15">
+							<div class="well" style="overflow: auto; padding: 0;">
+								<img class="thumbnail img-responsive" style="border: 0px solid #fff; border-radius: 5px;" 
+									ng-src="{{ item.url }}">
+								<div class="media col-lg-12">
+								    <div class="media-left">
+								        <a href="">
+								            <img style="width: 40px; height: 40px; border-radius: 5px;" ng-src="{{ item.thumbnailUrl }}" 
+												class="media-object img-circle" alt="Sample Image">
+								        </a>
+								    </div>
+								    <div class="media-body" ng-mouseleave="hoverOut(item.id)">
+								        <h5 style="position: relative;" class="media-heading" ng-mouseover="hoverIn(item.id)">
+								        	<b>
+								        		<a href="" class="profile-title">
+								        			{{ item.title | limitTo: 20 }}
+								        			{{item.title.length > 20 ? '...' : ''}}
+								        		</a>
+								        	</b>
+								        	<small class="pull-right"><i>Jan 10</i></small>
+											<!--<profile-popup info="item" id="profile-popup-{{ item.id }}"></profile-popup>-->
+								        </h5>
+								        <p>
+								        	@{{ item.title | limitTo: 10 }}
+								        </p>
+								    </div>
+								</div>
+								<p class="col-lg-12">
+									{{ item.title | limitTo: 44 }}
+								    {{item.title.length > 44 ? '...' : ''}}
+								</p>
+								<p class="col-lg-12" style="margin-top: 10px;">
+									<a class="btn btn-default btn-xs btn-circle" href="" id="reply"><span class="fa fa-heart"></span> Love it</a>
+									<a class="btn btn-default btn-xs btn-circle" data-toggle="collapse" href=""><span class="fa fa-comment"></span> &nbsp; 2 comments</a>
+									<a class="btn btn-default btn-xs btn-circle" data-toggle="collapse" href=""><span class="fa fa-share-alt"></span> &nbsp; Share</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
